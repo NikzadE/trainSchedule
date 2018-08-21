@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>; 
+
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
@@ -31,7 +32,6 @@
                             <thead>
                                 <tr>
                                     <th>Train Name</th>
-                                    <th>Line</th>
                                     <th>Destination</th>
                                     <th>Frequency</th>
                                     <th>Next Train Arrival</th>
@@ -55,14 +55,7 @@
                                 <label for="">Train Name</label>
                                 <input type = "text" class="form-control" id="trainNameInput"></input>
                             </div>
-                            <div class="form-group">
-                                    <label for="">Line</label>
-                                    <input type = "text" class="form-control" id="lineInput"></input>
-                                </div>
-                            <div class="form-group">
-                                    <label for="">Train Name</label>
-                                    <input type = "text" class="form-control" id="trainNameInput"></input>
-                                </div>
+                         
                             <div class="form-group">
                                     <label for="">Destination</label>
                                     <input type = "text" class="form-control" id="destinationInput"></input>
@@ -75,7 +68,7 @@
                                     <label for="">Frequency (min)</label>
                                     <input type = "text" class="form-control" id="frequencyInput"></input>
                                 </div>
-                                <button type="submit" class="btn btn-outline-primary" id="addTrainButton">Submit</button>
+                                <button type="submit" class="btn btn-primary" id="addTrainButton">Submit</button>
                                     
                         </form>
                     </div>
