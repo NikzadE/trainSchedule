@@ -21,15 +21,15 @@ $(document).ready(function () {
           var frequency = $("#frequencyInput").val().trim();
   
           database.push({
-              TrainName: trainName,
+              trainName: trainName,
               destination: destination,
               trainTime: trainTime,
               frequency: frequency,
-              timeAdded: firebase.datanase.serverValue.TIMESTAMP
+              timeAdded: firebase.database.serverValue.TIMESTAMP
   
           });
   
-          $("input").val("");
+          $("input").val('');
           return false;
       });
   
@@ -39,18 +39,22 @@ $(document).ready(function () {
           var trainTime = childSnapshot.val().trainTime;
           var frequency = childSnapshot.val().frequency;
           console.log("Name:" + trainName);
+          console.log("Destination" + destination);
   
           var frequency = parseInt(frequency);
+          var currentTime = moment();
+          console.log ("CURRENT TIME " + moment().format('HH:mm'));
   
   
   
-          var dConverted = moment(childSnapshot.val().time, 'HH:mm').subtract(1, 'years');
-          console.log("DATE CONVERTED" + dConverted);
+        var dConverted = moment(childSnapshot.val().time, 'HH:mm').subtract(1, 'years');
+        console.log("DATE CONVERTED: " + dConverted);
+
   
-          var time = moment(dConverted).format("HH:mm");
-          console.log("TIME" + time);
+          var Ttime = moment(dConverted).format("HH:mm");
+          console.log("TIME " + Ttime);
   
-          var tConverted = moment(time, 'HH:mm').subtract(1, 'years');
+          var tConverted = moment(Ttime, 'HH:mm').subtract(1, 'years');
           var tDifference = moment().diff(moment(tConverted), 'minutes');
           console.log("DIFFERENCE IN TIME: " + tDifference);
   
